@@ -1,0 +1,32 @@
+img {
+  width: 100%;
+}
+
+body {
+  background-image: url("release_1_hogwarts.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 100px;
+}
+
+.characteristic {
+  height: 1vh;
+  width: 100%;
+}
+
+#character {
+  width: 50%;
+  height: 100%;
+  background-color: black;
+  display: flex;
+}

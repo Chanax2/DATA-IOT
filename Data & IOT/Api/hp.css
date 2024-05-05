@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: white;
+  text-shadow: 2px 0 hsl(0, 0%, 0%), -2px 0 #000000, 0 2px #000000,
+    0 -2px #000000, 1px 1px #000000, -1px -1px #000000, 1px -1px #000000,
+    -1px 1px #000000;
+  text-decoration: inherit;
+}
+
+ul {
+  list-style-type: none;
+}
+li {
+  list-style-type: none;
+}
+
+body {
+  background-image: url("release_1_hogwarts.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+main {
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+}
+.logo {
+  background-image: url("harry-potter-logo-32524.png");
+  background-repeat: no-repeat;
+  width: 900px;
+}
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 200px;
+}
+.cards {
+  height: 1150px;
+  background-repeat: no-repeat;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: 100%;
+  align-items: flex-end;
+}
+
+#FleurDelacour {
+  background-size: cover;
+  background-position-x: right;
+}
+
+#PeterPettigrew {
+  background-size: cover;
+  background-position-x: center;
+}
+
+#SeverusSnape {
+  background-size: cover;
+  background-position-x: left;
+}
+
+#FredWeasley {
+  background-size: cover;
+  background-position-x: center;
+}

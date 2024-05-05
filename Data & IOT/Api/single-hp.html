@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="single-hp.css" />
+    <title>Harry-Potter-characters</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="characteristic"></div>
+      Nom :
+    </div>
+
+    <div id="character"></div>
+
+    <script>
+      function fetchCharacter() {
+        let url = window.location.search;
+        let slug = new URLSearchParams(url).get("slug");
+        return fetch("https://hp-api.lainocs.fr/characters/" + slug).then(
+          (response) => response.json()
+        );
+      }
+
+      async function displayCharacter() {
+        const data = await fetchCharacter();
+        fetch("http://192.168.224.136:3000/house", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ house: data.house }),
+        }).then(() => console.log("ok"));
+
+        console.log(data);
+        document.querySelector(".characteristic").innerHTML = `
+            <h1>${data.name}</h1>
+            <img src="${data.image}" alt="${data.name}">
+            <p>Maison: ${data.house}</p>
+            <p>Joué par: ${data.actor}</p>
+            <a href="index.html"> back
+                </a>`;
+      }
+
+      displayCharacter();
+    </script>
+  </body>
+</html>
